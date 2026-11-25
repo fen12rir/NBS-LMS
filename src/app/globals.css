@@ -22,7 +22,7 @@
 }
 
 @layer components {
-  /* Tactile Editorial Card: Crisp border + subtle offset shadow */
+  /* Paper Card */
   .nbs-paper-card {
     @apply bg-white border-2 border-slate-900 shadow-[4px_4px_0px_0px_#111827] transition-all;
   }
@@ -31,7 +31,7 @@
     @apply bg-white border-2 border-slate-900 shadow-[3px_3px_0px_0px_#111827] hover:border-[#E4002B] hover:shadow-[4px_4px_0px_0px_#E4002B] transition-all;
   }
 
-  /* Slide-Deck Ash Gray Pill Banner (From the PDF Slides) */
+  /* Slide Pill */
   .nbs-slide-pill {
     @apply inline-flex items-center bg-[#D5D9DD] text-slate-950 font-heading font-extrabold uppercase tracking-tight px-3.5 py-1 rounded-full text-xs;
   }

@@ -63,7 +63,7 @@ export default function InteractiveQuizPage() {
           </div>
         </div>
 
-        {/* One Focused Interactive Task per Screen */}
+        {/* Challenge Card */}
         <div className="nbs-paper-card p-6 sm:p-8 space-y-6">
           {step === 1 && (
             <div className="space-y-5">
@@ -317,7 +317,7 @@ export default function InteractiveQuizPage() {
             </div>
           )}
 
-          {/* Footer Navigation */}
+          {/* Quiz Navigation */}
           <div className="pt-4 border-t-2 border-slate-900 flex items-center justify-between">
             <button
               type="button"

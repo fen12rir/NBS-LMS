@@ -20,7 +20,7 @@ export default function LoginPage() {
       branchName: "NBS SM North Edsa",
       role: "trainee",
     });
-    router.push("/");
+    router.push("/dashboard");
   };
 
   const handleAdminLogin = () => {
@@ -101,7 +101,7 @@ export default function LoginPage() {
               </button>
             </form>
 
-            {/* Quick Role Access (Matches NBS-Projects Login) */}
+            {/* Role Switcher */}
             <div className="pt-4 border-t border-stone-200 space-y-2.5">
               <div className="text-[11px] font-mono uppercase text-center text-slate-500 font-bold">
                 Quick Portal Access

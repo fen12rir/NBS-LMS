@@ -71,7 +71,7 @@ export default function CertificatePage() {
           </button>
         </div>
 
-        {/* Certificate with Slide 1 Vector Red Stationery Line-Art Header */}
+        {/* Certificate Preview */}
         <div
           ref={certRef}
           className="bg-white border-4 border-[#E4002B] p-2 shadow-[6px_6px_0px_0px_#111827]"

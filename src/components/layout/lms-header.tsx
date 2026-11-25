@@ -72,9 +72,9 @@ export function LmsHeader({
 
   const isAdmin = user.role === "branch_admin" || user.role === "super_admin";
 
-  // Trainee navigation (Only shows Admin Portal if signed in as an Admin, just like NBS-Projects!)
+  // Navigation Links
   const navItems = [
-    { href: "/", label: "Courses", icon: LayoutGrid },
+    { href: "/dashboard", label: "Courses", icon: LayoutGrid },
     {
       href: "/courses/cybersecurity-awareness",
       label: "Lessons",
@@ -93,15 +93,15 @@ export function LmsHeader({
   ];
 
   const handleSignOut = () => {
-    router.push("/login");
+    router.push("/");
   };
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b-2 border-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 h-16 flex items-center justify-between gap-4">
-        {/* Left: Tactile NBS Logo + Nav */}
+        {/* Brand & Navigation */}
         <div className="flex items-center space-x-4 lg:space-x-6">
-          <Link href="/" className="flex items-center space-x-3 shrink-0">
+          <Link href="/dashboard" className="flex items-center space-x-3 shrink-0">
             <div className="bg-[#E4002B] text-white px-2.5 py-1 font-heading font-black text-lg tracking-tighter border border-slate-950 shadow-[2px_2px_0px_0px_#111827]">
               NBS
             </div>
@@ -156,7 +156,7 @@ export function LmsHeader({
           </nav>
         </div>
 
-        {/* Right: Language Toggle, User Info & Sign Out */}
+        {/* Actions & User Profile */}
         <div className="flex items-center space-x-2.5 shrink-0">
           {onToggleLang && (
             <button

@@ -1,11 +1,8 @@
--- MariaDB Schema for National Book Store (NBS) Multi-Course Enterprise LMS
--- Target Database: nbs_lms (Dedicated & isolated from nbs_pos_training)
--- Version: 1.0.0
-
+-- Database Setup
 CREATE DATABASE IF NOT EXISTS nbs_lms CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE nbs_lms;
 
--- 1. Branches Reference Table (11 Verified NBS Branches)
+-- Branches Table
 CREATE TABLE IF NOT EXISTS branches (
   code VARCHAR(32) PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
@@ -29,7 +26,7 @@ INSERT INTO branches (code, name, region, is_active) VALUES
   ('HQ01', 'NBS Head Office (Quad Alpha)', 'NCR - Mandaluyong', 1)
 ON DUPLICATE KEY UPDATE name = VALUES(name), region = VALUES(region), is_active = VALUES(is_active);
 
--- 2. Users Table (Supports Branch Staff, HQ Staff, Branch Admins, Super Admins)
+-- Users Table
 CREATE TABLE IF NOT EXISTS users (
   id VARCHAR(64) PRIMARY KEY,
   full_name VARCHAR(255) NOT NULL,
@@ -49,7 +46,7 @@ CREATE TABLE IF NOT EXISTS users (
   CONSTRAINT fk_lms_users_branch FOREIGN KEY (branch_code) REFERENCES branches(code) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- 3. Multi-Course Registry Table (Extensible for Future Modules)
+-- Courses Table
 CREATE TABLE IF NOT EXISTS courses (
   id VARCHAR(64) PRIMARY KEY,
   code VARCHAR(32) NOT NULL UNIQUE,
@@ -68,7 +65,7 @@ INSERT INTO courses (id, code, title, category, passing_score, total_chapters, i
   ('retail-loss-prevention', 'NBS-OPS-103', 'Store Safety & Retail Loss Prevention', 'Store Operations', 80, 5, 0, 3)
 ON DUPLICATE KEY UPDATE title = VALUES(title), is_published = VALUES(is_published);
 
--- 4. User Progress Scoped Per Course
+-- Course Progress Table
 CREATE TABLE IF NOT EXISTS user_course_progress (
   user_id VARCHAR(64) NOT NULL,
   course_id VARCHAR(64) NOT NULL,
@@ -83,7 +80,7 @@ CREATE TABLE IF NOT EXISTS user_course_progress (
   CONSTRAINT fk_ucp_course FOREIGN KEY (course_id) REFERENCES courses(id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- 5. Interactive Quiz Station Attempts Scoped Per Course
+-- Quiz Attempts Table
 CREATE TABLE IF NOT EXISTS quiz_attempts (
   id VARCHAR(64) PRIMARY KEY,
   user_id VARCHAR(64) NOT NULL,

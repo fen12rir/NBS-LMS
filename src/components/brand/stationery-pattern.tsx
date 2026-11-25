@@ -1,9 +1,6 @@
 import React from "react";
 
-/**
- * Evenly Spaced, Seamless Repeating NBS Red Line-Art Stationery Pattern
- * Every item is uniformly distributed across the horizontal and vertical strips with no empty gaps.
- */
+/* Header Stationery Pattern */
 export function StationeryHeaderPattern({ className = "" }: { className?: string }) {
   return (
     <div
@@ -18,9 +15,9 @@ export function StationeryHeaderPattern({ className = "" }: { className?: string
         preserveAspectRatio="xMidYMid slice"
       >
         <defs>
-          {/* Seamless 600px horizontal repeating unit so items are evenly spaced from 0 to 1200 */}
+          {/* Pattern Tile */}
           <g id="nbs-stationery-row" stroke="#E4002B" strokeWidth="2.2">
-            {/* 1. Technical Ruler (x: 16..44) */}
+            {/* Ruler */}
             <g>
               <rect x="16" y="14" width="28" height="94" rx="2" fill="white" />
               <line x1="16" y1="28" x2="28" y2="28" />
@@ -32,7 +29,7 @@ export function StationeryHeaderPattern({ className = "" }: { className?: string
               <line x1="16" y1="100" x2="28" y2="100" />
             </g>
 
-            {/* 2. Capped Marker Pen (x: 64..96) */}
+            {/* Marker */}
             <g>
               <rect x="64" y="20" width="24" height="86" rx="2" fill="white" />
               <path d="M88 26H95V58H88" />
@@ -40,14 +37,14 @@ export function StationeryHeaderPattern({ className = "" }: { className?: string
               <line x1="68" y1="106" x2="84" y2="106" />
             </g>
 
-            {/* 3. Chisel Highlighter (x: 114..152) */}
+            {/* Highlighter */}
             <g>
               <path d="M118 24H148L152 80L140 94H126L114 80L118 24Z" fill="white" />
               <line x1="122" y1="94" x2="144" y2="94" />
               <path d="M129 94V106L138 102V94" />
             </g>
 
-            {/* 4. Drafting Compass (x: 170..226) */}
+            {/* Compass */}
             <g>
               <rect x="193" y="14" width="10" height="12" rx="1" fill="white" />
               <circle cx="198" cy="32" r="7" fill="white" />
@@ -56,7 +53,7 @@ export function StationeryHeaderPattern({ className = "" }: { className?: string
               <circle cx="178" cy="92" r="3" fill="white" />
             </g>
 
-            {/* 5. Fountain Pen (x: 244..264) */}
+            {/* Fountain Pen */}
             <g>
               <path d="M244 30C244 22 264 22 264 30V80H244V30Z" fill="white" />
               <path d="M244 80L254 108L264 80" />
@@ -64,7 +61,7 @@ export function StationeryHeaderPattern({ className = "" }: { className?: string
               <circle cx="254" cy="90" r="2" fill="#E4002B" />
             </g>
 
-            {/* 6. Sharpened Pencil (x: 284..306) */}
+            {/* Pencil */}
             <g>
               <rect x="284" y="36" width="22" height="52" fill="white" />
               <line x1="284" y1="46" x2="306" y2="46" />
@@ -73,7 +70,7 @@ export function StationeryHeaderPattern({ className = "" }: { className?: string
               <path d="M284 88L295 108L306 88" />
             </g>
 
-            {/* 7. Scissors + Top Pushpins (x: 326..390) */}
+            {/* Scissors */}
             <g>
               <circle cx="340" cy="38" r="13" fill="white" />
               <circle cx="340" cy="38" r="6" />
@@ -83,13 +80,13 @@ export function StationeryHeaderPattern({ className = "" }: { className?: string
               <path d="M368 48L348 104" />
             </g>
 
-            {/* 8. Protractor & Set Square Triangle (x: 404..468) */}
+            {/* Protractor */}
             <g>
               <path d="M404 104 A 62 62 0 0 1 466 24 L 466 104 Z" fill="white" />
               <path d="M424 90 A 38 38 0 0 1 454 48 L 454 90 Z" />
             </g>
 
-            {/* 9. Spiral Notebook (x: 486..584) */}
+            {/* Notebook */}
             <g>
               <rect x="486" y="20" width="98" height="88" rx="2" fill="white" />
               <rect x="496" y="13" width="6" height="12" rx="1" fill="white" />
@@ -108,7 +105,7 @@ export function StationeryHeaderPattern({ className = "" }: { className?: string
           </g>
         </defs>
 
-        {/* Render two seamless 600px tiles side-by-side (0..600 and 600..1200) */}
+        {/* Pattern Instances */}
         <use href="#nbs-stationery-row" x="0" y="0" />
         <use href="#nbs-stationery-row" x="600" y="0" />
 
@@ -119,9 +116,7 @@ export function StationeryHeaderPattern({ className = "" }: { className?: string
   );
 }
 
-/**
- * Evenly Spaced Vertical Stationery Sidebar Strip
- */
+/* Vertical Stationery Strip */
 export function StationeryVerticalStrip({ className = "" }: { className?: string }) {
   return (
     <div
@@ -136,7 +131,7 @@ export function StationeryVerticalStrip({ className = "" }: { className?: string
         preserveAspectRatio="xMidYMid slice"
       >
         <line x1="108" y1="0" x2="108" y2="220" stroke="#E4002B" strokeWidth="2.5" />
-        {/* Top Row: Marker, Highlighter, Pencil */}
+        {/* Top Row */}
         <g stroke="#E4002B" strokeWidth="2">
           <rect x="12" y="14" width="20" height="82" rx="2" fill="white" />
           <path d="M32 20H38V48H32" />
@@ -150,7 +145,7 @@ export function StationeryVerticalStrip({ className = "" }: { className?: string
           <path d="M84 78L91 94L98 78" />
         </g>
 
-        {/* Bottom Row: Horizontal Pens & Utility Cutter */}
+        {/* Bottom Row */}
         <g stroke="#E4002B" strokeWidth="2">
           <rect x="10" y="114" width="88" height="12" rx="6" fill="white" />
           <rect x="10" y="138" width="88" height="10" rx="5" fill="white" />

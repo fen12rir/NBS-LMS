@@ -150,7 +150,7 @@ function CybersecurityCoursePlayerContent() {
       />
 
       <div className="max-w-7xl w-full mx-auto px-4 sm:px-8 py-6 sm:py-8 grid grid-cols-1 lg:grid-cols-12 gap-6">
-        {/* Left Sidebar (4 Cols): Chapter Selector */}
+        {/* Chapter Sidebar */}
         <aside className="lg:col-span-4 space-y-4">
           <div className="nbs-paper-card p-4 space-y-4">
             <div className="border-b border-stone-200 pb-3">
@@ -225,10 +225,10 @@ function CybersecurityCoursePlayerContent() {
           </div>
         </aside>
 
-        {/* Main Reading Canvas (8 Cols) */}
+        {/* Lesson Content */}
         <main className="lg:col-span-8">
           <div className="nbs-paper-card overflow-hidden flex flex-col justify-between">
-            {/* Top Banner */}
+            {/* Chapter Header */}
             <div className="border-b-2 border-slate-900 bg-white flex">
               <StationeryVerticalStrip className="w-16 sm:w-20 shrink-0 hidden sm:block" />
               <div className="p-5 sm:p-6 flex-1 space-y-2">
@@ -277,11 +277,11 @@ function CybersecurityCoursePlayerContent() {
               </div>
             </div>
 
-            {/* Body Content */}
+            {/* Chapter Body */}
             <div className="p-5 sm:p-7 space-y-6">
               {currentChapter.isImplemented ? (
                 <>
-                  {/* Chapter Training Video Player */}
+                  {/* Video Player */}
                   {currentChapter.video && (
                     <div className="border-2 border-slate-900 bg-white shadow-[3px_3px_0px_0px_#111827] overflow-hidden">
                       <div className="bg-slate-950 text-white px-4 py-2.5 flex items-center justify-between gap-2">
@@ -355,7 +355,7 @@ function CybersecurityCoursePlayerContent() {
                     </div>
                   )}
 
-                  {/* Single Non-Redundant Summary Box with Icon */}
+                  {/* Key Takeaway */}
                   {currentChapter.simpleTakeaway && (
                     <div className="p-4 bg-[#FFF1F2] border-2 border-[#E4002B] shadow-[3px_3px_0px_0px_#E4002B] flex items-start space-x-3">
                       <Lightbulb className="w-5 h-5 text-[#E4002B] shrink-0 mt-0.5" />
@@ -374,7 +374,7 @@ function CybersecurityCoursePlayerContent() {
                     </div>
                   )}
 
-                  {/* Slide Sections (Shows only active language, no duplicate paragraphs) */}
+                  {/* Lesson Sections */}
                   <div className="space-y-4">
                     {currentChapter.sections.map((sec) => {
                       const borderLeftClass =
@@ -405,7 +405,7 @@ function CybersecurityCoursePlayerContent() {
                             )}
                           </div>
 
-                          {/* Official PDF Rule */}
+                          {/* Section Details */}
                           {sec.description && (
                             <p className="text-xs sm:text-sm text-slate-800 leading-relaxed">
                               {lang === "tl"
@@ -435,7 +435,7 @@ function CybersecurityCoursePlayerContent() {
                             </div>
                           )}
 
-                          {/* Single Plain Explanation + Optional Store Example with Lucide Icons */}
+                          {/* Section Explanation */}
                           <div className="p-3 bg-white border border-stone-300 space-y-2">
                             <div className="flex items-start space-x-2 text-xs text-slate-700 leading-relaxed">
                               <Info className="w-4 h-4 text-[#E4002B] shrink-0 mt-0.5" />
@@ -470,7 +470,7 @@ function CybersecurityCoursePlayerContent() {
                     })}
                   </div>
 
-                  {/* Role-Specific Tips Box (Slides 34-35) */}
+                  {/* Role Checklist */}
                   <div className="p-4 bg-[#FAF8F5] border border-stone-300 space-y-3">
                     <div className="flex flex-wrap items-center justify-between gap-2">
                       <span className="font-heading font-extrabold text-xs uppercase text-slate-900">
@@ -529,7 +529,7 @@ function CybersecurityCoursePlayerContent() {
                     )}
                   </div>
 
-                  {/* Interactive Lesson Checkpoint */}
+                  {/* Practice Checkpoint */}
                   {currentChapter.checkpoint && (
                     <div className="border-2 border-slate-900 bg-[#FAF8F5] p-5 shadow-[3px_3px_0px_0px_#111827] space-y-3">
                       <div>
@@ -610,7 +610,7 @@ function CybersecurityCoursePlayerContent() {
               )}
             </div>
 
-            {/* Bottom Chapter Navigation */}
+            {/* Chapter Pagination */}
             <div className="p-4 border-t-2 border-slate-900 bg-[#FAF8F5] flex items-center justify-between">
               <button
                 type="button"
