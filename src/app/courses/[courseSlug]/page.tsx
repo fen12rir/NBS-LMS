@@ -303,25 +303,10 @@ function CybersecurityCoursePlayerContent() {
                       <div className="bg-slate-900 relative aspect-video w-full flex items-center justify-center">
                         {!videoMissing ? (
                           <video
-                            key={`${currentChapter.id}-${currentChapter.video.startSeconds || 0}`}
-                            src={
-                              currentChapter.video.startSeconds !== undefined &&
-                              currentChapter.video.endSeconds !== undefined
-                                ? `${currentChapter.video.src}#t=${currentChapter.video.startSeconds},${currentChapter.video.endSeconds}`
-                                : currentChapter.video.src
-                            }
+                            key={`${currentChapter.id}-${currentChapter.video.src}`}
+                            src={`${currentChapter.video.src}?v=2`}
                             controls
                             preload="metadata"
-                            onLoadedMetadata={(e) => {
-                              if (
-                                currentChapter.video?.startSeconds &&
-                                e.currentTarget.currentTime <
-                                  currentChapter.video.startSeconds
-                              ) {
-                                e.currentTarget.currentTime =
-                                  currentChapter.video.startSeconds;
-                              }
-                            }}
                             onError={() => setVideoMissing(true)}
                             className="w-full h-full object-contain bg-black"
                           />
