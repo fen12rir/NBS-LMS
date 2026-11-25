@@ -14,10 +14,10 @@
 # production
 /build
 
-# database backups & large training video files
+# database backups & raw 2.5GB master video (keep ch-*.mp4 tracked)
 /backups/
 *.sql.gz
-/public/assets/videos/*.mp4
+/public/assets/videos/CYBERSECURITY AWARENESS TRAINING.mp4
 /public/assets/videos/*.mov
 /public/assets/videos/*.mkv
 
