@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --nbs-red: #E4002B;
+    --nbs-red-dark: #8B0000;
+    --nbs-paper: #FAF8F5;
+    --nbs-ink: #111827;
+  }
+
+  body {
+    @apply bg-[#FAF8F5] text-slate-900 antialiased font-sans selection:bg-[#E4002B] selection:text-white;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Montserrat', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+}
+
+@layer components {
+  /* Tactile Editorial Card: Crisp border + subtle offset shadow */
+  .nbs-paper-card {
+    @apply bg-white border-2 border-slate-900 shadow-[4px_4px_0px_0px_#111827] transition-all;
+  }
+
+  .nbs-paper-card-hover {
+    @apply bg-white border-2 border-slate-900 shadow-[3px_3px_0px_0px_#111827] hover:border-[#E4002B] hover:shadow-[4px_4px_0px_0px_#E4002B] transition-all;
+  }
+
+  /* Slide-Deck Ash Gray Pill Banner (From the PDF Slides) */
+  .nbs-slide-pill {
+    @apply inline-flex items-center bg-[#D5D9DD] text-slate-950 font-heading font-extrabold uppercase tracking-tight px-3.5 py-1 rounded-full text-xs;
+  }
+}
