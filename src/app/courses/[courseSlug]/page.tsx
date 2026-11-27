@@ -392,16 +392,18 @@ function CybersecurityCoursePlayerContent() {
 
                           {/* Section Details */}
                           {sec.description && (
-                            <p className="text-xs sm:text-sm text-slate-800 leading-relaxed">
-                              {lang === "tl"
-                                ? sec.descriptionTl
-                                : sec.description}
+                            <p className="text-xs sm:text-sm text-slate-800 leading-relaxed whitespace-pre-line">
+                         
+                                {lang === "tl"
+                                  ? sec.descriptionTl
+                                  : sec.description}
+                             
                             </p>
                           )}
 
                           {sec.whatText && (
                             <div className="text-xs sm:text-sm text-slate-800 space-y-1">
-                              <div>
+                              <div className="whitespace-pre-line">
                                 <strong className="text-slate-950">
                                   {lang === "tl" ? "Ano ito: " : "What: "}
                                 </strong>
